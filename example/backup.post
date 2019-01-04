@@ -1,0 +1,2 @@
+/bin/echo -e "From: backup\nSubject: backup log\n" | cat - "$LOGFILE" | sendmail admin@example.com
+rm /root/mysql.gz

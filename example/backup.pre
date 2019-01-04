@@ -1,0 +1,1 @@
+mysqldump --all-databases | gzip > /root/mysql.gz

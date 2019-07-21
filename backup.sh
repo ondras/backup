@@ -18,7 +18,7 @@ export AWS_ACCESS_KEY_ID
 export AWS_SECRET_ACCESS_KEY
 
 duplicity --log-file "$LOGFILE" --full-if-older-than $FULL_AGE --include-filelist $BASE/backup.list --exclude '**' / s3://$HOST/$BUCKET $EXTRA > /dev/null
-duplicity --log-file "$LOGFILE" remove-all-but-n-full $MAX_FULL s3://$HOST/$BUCKET $EXTRA > /dev/null
+duplicity --log-file "$LOGFILE" remove-all-but-n-full $MAX_FULL --force s3://$HOST/$BUCKET $EXTRA > /dev/null
 
 . $BASE/backup.post  # email logfile, ...
 
